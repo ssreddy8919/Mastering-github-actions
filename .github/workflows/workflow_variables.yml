@@ -1,10 +1,12 @@
 name: Testing Workflow Variables
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
 
 env:
-  cloud: google-cloud
+  cloud: aws-cloud
 
 jobs:
   greeting_job:
@@ -12,8 +14,8 @@ jobs:
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello Mona it's Monday"
+      - name: "Say Hello Medha it's Saturday"
         run: echo "$Greeting $First_Name is using $cloud!"
         env:
-          First_Name: Vishal
+          First_Name: Aadhya
 
